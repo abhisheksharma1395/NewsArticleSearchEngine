@@ -16,6 +16,9 @@ to be crawled, and number of articles to be stored per file. The crawler is desi
 interruption (exceptions), failures, and resume crawler from the previous stage. 
 
 ### Architecture
+
+![alt text](https://github.com/abhisheksharma1395/NewsArticleSearchEngine/blob/main/README_IMAGES/crawler.jpg "Crawler Design")
+
 As shown in the above image, the user/actor is responsible to initiate the script/bat file with 
 required params as given below.
 
@@ -82,6 +85,9 @@ Articles_to_crawl = 1000
 Apache Lucene™ is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.
 
 ### Lucene Implementation and Operations
+
+![alt text](https://github.com/abhisheksharma1395/NewsArticleSearchEngine/blob/main/README_IMAGES/lucene.jpg "Lucene Design")
+
 #### Acquire Raw Content
 Our Crawler crawls data and stores it in a JSON file. Each JSON file contains 1000 articles. 
 We read these files and converted them into a JSON array. We have implemented this using 
@@ -137,6 +143,8 @@ built using Hadoop MapReduce framework to process the data and build indexes bas
 We have employed TF-IDF ranking mechanism to rank the pages and provide relevant results.
 
 ### Architecture
+
+![alt text](https://github.com/abhisheksharma1395/NewsArticleSearchEngine/tree/main/README_IMAGES "Hadoop Search Engine Design")
 
 The above diagram represents different components and gears that all works together to provide 
 a working prototype for the Hadoop Based search engine. The existing search engine works 
