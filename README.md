@@ -241,8 +241,8 @@ calculate the TF.IDF and get a list of articles. We sort these articles in the d
 and return the list of articleIDs based on their TF.IDF values.
 
 Example,<br>
->>>
-Input => pigments 116148:1:1374 116228:1:2641 664:1:1791 <br>
+
+>Input => pigments 116148:1:1374 116228:1:2641 664:1:1791 <br>
 Total_Documents = 138200 <br>
 word = pigments<br>
 articleID = 116148<br>
