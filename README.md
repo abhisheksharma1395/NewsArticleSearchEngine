@@ -256,4 +256,30 @@ TDIDF (for document 2) = TF * IDF = 0.00176576552<br>
 TDIDF (for document 3) = TF * IDF = 0.00260378937<br>
 After sorting, we get a list of articleIDs in the descending order of their TFIDF values:<br>
 [ 116148, 664, 116228 ]
->>>
+   
+#### Querying Lucene Index
+To query Lucene index, we have first passed the query to standard analysers to remove 
+punctuations, stop words and to tokenize words and the result of this process was used to query 
+the index.
+   
+### Run Instructions
+#### Instruction to build Hadoop index
+```bash
+java -jar InvertedIndex.jar <Path to data> <path to store inverted index>
+```
+   
+Example, <br>
+> java -jar InvertedIndex.jar C:\IRProject\data C:\IRProject\data\output
+
+#### Instruction to run rest api
+```bsh
+java -Dindex.lucene.path=<lucene index path> -jar RestApi.jar
+```
+   
+Example, <br>
+>  java -Dindex.lucene.path='/root/index/lucene/Index' -jar RestApi.jar
+
+#### Instruction to run UI
+Open chrome and go to localhost:8080
+
+
