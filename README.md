@@ -10,7 +10,7 @@ There are three main aspects of the projects:
 
 ## Crawler
 ### Overview of the crawling system
-The crawler crawls the website of The New York Times for news articles and saves the data in 
+The crawler crawls the website of [The New York Times](https://www.nytimes.com/) for news articles and saves the data in 
 a JSON file structure. The crawler receives parameters such as root source, number of articles 
 to be crawled, and number of articles to be stored per file. The crawler is designed to handle 
 interruption (exceptions), failures, and resume crawler from the previous stage. 
