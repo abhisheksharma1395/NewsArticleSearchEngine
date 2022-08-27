@@ -59,4 +59,42 @@ After completing checks for where the crawler is crawling, the program calls the
 The collected data/articles are stored in files every time we finish visiting 1000 URLs (is configurable) and the upper bound for visited URLs is 150000. This approach helped us gather more than 1Gb of data. We have accounted for the duplicates by comparing article with article title and article URL. The crawler is equipped to handle sudden interruption, if the crawler is interrupted in between then it can be resumed by starting the crawler again. The crawler saves the crawled articles in a file 
 and when crawler is resumed it will get the last crawled article and resume from it.
 
+## Apache Lucene Based Search Engine
 
+### Overview Apache Lucene
+Apache Lucene™ is a high-performance, full-featured search engine library written entirely in Java. It is a technology suitable for nearly any application that requires structured search, full-text search, faceting, nearest-neighbor search across high-dimensionality vectors, spell correction or query suggestions.
+
+### Lucene Implementation and Operations
+#### Acquire Raw Content
+Our Crawler crawls data and stores it in a JSON file. Each JSON file contains 1000 articles. 
+We read these files and converted them into a JSON array. We have implemented this using 
+the method – parseJSONFile().
+
+#### Build the document
+In the next step we build the document from the data which the search application can 
+understand and interpret easily. This has been done in method addDocument() where we create 
+a Document object to store the article data.
+
+#### Analyse the document
+Before starting the indexing process, the document needs to be analysed, to identify the words 
+that need to be indexed. In this part we have performed operations like making text lowercase, 
+removing stop words, punctuations, tokenization, and filtering. For implementing this we have 
+used Lucene Standard analyser since it performs all these operations.
+
+#### Indexing the document
+Once documents are built and analysed, the next step is to index them so that these documents 
+can be retrieved based on certain keys instead of the entire content of the document. For 
+implementing this we have used createIndex() method which takes JSON files (data), 
+indexwriter and Document object as input and creates the index. For index creation, we have 
+used two fields – articleTitle and articleBody (article content). We used article title for indexing 
+because if our query keyword is present in the title then that article is more relevant to the user 
+than the one that does not contain it. ArticleBody field is used because that is the field that 
+contains actual content of news article.
+
+#### Build Query
+To build the query we are using the createQueryParser() and getIndexSearcher() method which 
+is used to get an index and search for a query in an index.
+
+#### Process Query
+In this part we have used the query object and checked the indexed database to find the news 
+articles that match with the input query. We have implemented this in a search() method.
