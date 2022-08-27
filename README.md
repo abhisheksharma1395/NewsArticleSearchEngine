@@ -59,6 +59,23 @@ After completing checks for where the crawler is crawling, the program calls the
 The collected data/articles are stored in files every time we finish visiting 1000 URLs (is configurable) and the upper bound for visited URLs is 150000. This approach helped us gather more than 1Gb of data. We have accounted for the duplicates by comparing article with article title and article URL. The crawler is equipped to handle sudden interruption, if the crawler is interrupted in between then it can be resumed by starting the crawler again. The crawler saves the crawled articles in a file 
 and when crawler is resumed it will get the last crawled article and resume from it.
 
+### Instruction on how to run crawler
+To run crawler,
+
+Option 1: Execute “run.bat” file present in crawler folder. This file will execute the crawler 
+script with default parameters as follows:
+- Start_url: https://nytimes.com 
+- Articles_per_file: 50
+- Articles_to_crawl: 1000
+
+Option 2: Execute python script and pass the params with below command
+```bash
+python main.py https://www.nytimes.com/ 50 1000
+```
+Where, start_url = https://www.nytimes.com/
+Articles_per_file = 50
+Articles_to_crawl = 1000
+
 ## Apache Lucene Based Search Engine
 
 ### Overview Apache Lucene
@@ -98,3 +115,14 @@ is used to get an index and search for a query in an index.
 #### Process Query
 In this part we have used the query object and checked the indexed database to find the news 
 articles that match with the input query. We have implemented this in a search() method.
+
+### Instruction on how to build the Lucene index
+To run Lucene run below command in LuceneSearch.jar folder
+
+java -jar LuceneSearch.jar <data path> <path to create index> <path to store result> <query> 
+<number of articles to fetch> <create index(true) or use existing index (false)>
+
+```bash
+java -jar LuceneSearch.jar /opt/home/cs242-w22/projectdata/data/ /opt/home/cs242-
+w22/projectdata/index/ /opt/home/cs242-w22/projectdata/result/ "covid vaccine" 5 true
+```
