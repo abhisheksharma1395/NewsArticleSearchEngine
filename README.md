@@ -119,9 +119,11 @@ articles that match with the input query. We have implemented this in a search()
 ### Instruction on how to build the Lucene index
 To run Lucene run below command in LuceneSearch.jar folder
 
+```bash
 java -jar LuceneSearch.jar <data path> <path to create index> <path to store result> <query> 
 <number of articles to fetch> <create index(true) or use existing index (false)>
-
+```
+Example as shown below
 ```bash
 java -jar LuceneSearch.jar /opt/home/cs242-w22/projectdata/data/ /opt/home/cs242-
 w22/projectdata/index/ /opt/home/cs242-w22/projectdata/result/ "covid vaccine" 5 true
