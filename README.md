@@ -241,7 +241,7 @@ calculate the TF.IDF and get a list of articles. We sort these articles in the d
 and return the list of articleIDs based on their TF.IDF values.
 
 Example,<br>
->
+>>>
 Input => pigments 116148:1:1374 116228:1:2641 664:1:1791 <br>
 Total_Documents = 138200 <br>
 word = pigments<br>
@@ -257,4 +257,4 @@ TDIDF (for document 2) = TF * IDF = 0.00176576552<br>
 TDIDF (for document 3) = TF * IDF = 0.00260378937<br>
 After sorting, we get a list of articleIDs in the descending order of their TFIDF values:<br>
 [ 116148, 664, 116228 ]
->
+>>>
