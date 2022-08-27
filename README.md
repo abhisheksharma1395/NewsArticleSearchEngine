@@ -144,7 +144,7 @@ We have employed TF-IDF ranking mechanism to rank the pages and provide relevant
 
 ### Architecture
 
-![alt text]([https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://github.com/abhisheksharma1395/NewsArticleSearchEngine/blob/main/README_IMAGES/hadoop.jpg) "Haddop Based Search Engine")
+![alt text](https://github.com/abhisheksharma1395/NewsArticleSearchEngine/blob/main/README_IMAGES/hadoop.jpg "Haddop Based Search Engine")
 
 The above diagram represents different components and gears that all works together to provide 
 a working prototype for the Hadoop Based search engine. The existing search engine works 
