@@ -227,8 +227,8 @@ word<Key> along with a string with a list of all articles <Value> in which word 
 ```
   
 E.g., of Inverted Index
-pigments 116148:1:1374 116228:1:2641 664:1:1791
-revolt 117407:1:1401 
+> pigments 116148:1:1374 116228:1:2641 664:1:1791
+> revolt 117407:1:1401 
 
 #### Querying Hadoop Index
 To generate the index using Hadoop, the query given by the user, is taken as an input. The 
@@ -239,4 +239,5 @@ word and article length as an output from MongoDB for a query. We then use these
 calculate the TF.IDF and get a list of articles. We sort these articles in the descending order 
 and return the list of articleIDs based on their TF.IDF values.
    
-Example
+Example,
+
