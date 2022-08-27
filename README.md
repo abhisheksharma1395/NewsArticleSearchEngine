@@ -227,8 +227,7 @@ word<Key> along with a string with a list of all articles <Value> in which word 
 ```
   
 E.g., of Inverted Index
-pigments 116148:1:1374 116228:1:2641 664:1:1791
-
+> pigments 116148:1:1374 116228:1:2641 664:1:1791<br>
 revolt 117407:1:1401 
 
 #### Querying Hadoop Index
