@@ -227,8 +227,9 @@ word<Key> along with a string with a list of all articles <Value> in which word 
 ```
   
 E.g., of Inverted Index
-> pigments 116148:1:1374 116228:1:2641 664:1:1791
-> revolt 117407:1:1401 
+pigments 116148:1:1374 116228:1:2641 664:1:1791
+
+revolt 117407:1:1401 
 
 #### Querying Hadoop Index
 To generate the index using Hadoop, the query given by the user, is taken as an input. The 
@@ -238,6 +239,20 @@ index data is then fetched from MongoDB. We get the article ID, number of occurr
 word and article length as an output from MongoDB for a query. We then use these values to 
 calculate the TF.IDF and get a list of articles. We sort these articles in the descending order 
 and return the list of articleIDs based on their TF.IDF values.
-   
-Example,
 
+Example,
+Input => pigments 116148:1:1374 116228:1:2641 664:1:1791 <br>
+Total_Documents = 138200 <br>
+word = pigments<br>
+articleID = 116148<br>
+wordcount = 1<br>
+articleLength = 1374<br>
+docsCount = 3<br>
+TF = wordcount / articleLength = 0.00072780203<br>
+IDF = Log(Total_Documents / docsCount) = 4.66338678832<br>
+TDIDF (for document 1) = TF * IDF = 0.00339402237<br>
+Similarly, we can calculate TFIDF for this word in other documents:<br>
+TDIDF (for document 2) = TF * IDF = 0.00176576552<br>
+TDIDF (for document 3) = TF * IDF = 0.00260378937<br>
+After sorting, we get a list of articleIDs in the descending order of their TFIDF values:<br>
+[ 116148, 664, 116228 ]
