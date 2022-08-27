@@ -124,10 +124,10 @@ java -jar LuceneSearch.jar <data path> <path to create index> <path to store res
 <number of articles to fetch> <create index(true) or use existing index (false)>
 ```
 Example as shown below
-```bash
-java -jar LuceneSearch.jar /opt/home/cs242-w22/projectdata/data/ /opt/home/cs242-
+
+>java -jar LuceneSearch.jar /opt/home/cs242-w22/projectdata/data/ /opt/home/cs242-
 w22/projectdata/index/ /opt/home/cs242-w22/projectdata/result/ "covid vaccine" 5 true
-```
+
 ## Hadoop Based Search Engine
 ### Overview
 We have developed our own search engine that is capable of querying and retrieving New York 
