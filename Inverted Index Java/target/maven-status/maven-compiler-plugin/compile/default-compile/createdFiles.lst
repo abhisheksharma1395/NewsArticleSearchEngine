@@ -1,0 +1,6 @@
+com\index\App.class
+com\index\Combiner.class
+com\index\Mapper.class
+com\index\Driver.class
+com\index\ReduceOld.class
+com\index\Reducer.class

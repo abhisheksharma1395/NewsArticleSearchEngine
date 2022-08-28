@@ -1,0 +1,71 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'); 
+
+.bg {
+    /* background-color: whitesmoke; */
+    padding: 1rem;
+}
+
+.radio-label{
+    margin-left: 0.5rem;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.center {
+    margin-top: 30vh;
+}
+
+.input-box {
+    padding: 0 20vh;
+}
+
+.center-align{
+    margin-left: 45%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.input-div {
+    display: flex;
+}
+
+button {
+    margin-left: 0.5rem;
+}
+
+.text-overflow {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
+p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.spinner-div {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .spinner-span {
+    margin-left: 50%;
+    margin-top: 20%;
+  }
+
+
+  .green{
+      color: green;
+  }

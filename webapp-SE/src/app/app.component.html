@@ -1,0 +1,68 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container bg" [ngClass]="{
+  'center': flag
+}">
+  <div style="text-align:center" class="content">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
+  <section>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="input-box">
+      <div #searchType class="form-group">
+        <div class="text-center"><label>Please select the search engine type!</label></div>
+        <div class="row">
+          <div class="col float-right">
+          <span class="float-right">
+            <input id="lucene" type="radio" [checked] value="lucene" name="searchType" formControlName="searchType"
+              (change)="changeSearchType($event)" />
+            <label class="radio-label" for="myself">Lucene</label>
+          </span>
+          </div>
+          <div class="col">
+            <input id="hadoop" type="radio" value="hadoop" name="searchType" formControlName="searchType"
+              (change)="changeSearchType($event)" />
+            <label class="radio-label" for="others">Hadoop</label>
+          </div>
+        </div>
+        <div #queryInput class="form-group input-div">
+          <input type="search" formControlName="searchInput" class="form-control"
+            placeholder="Please enter the serach query here!"
+            [class.is-invalid]="searchInput.invalid && searchInput.touched" />
+          <button [disabled]="loading || searchForm.invalid" class="btn" [ngClass]="{
+                        'btn-secondary': searchForm.invalid,
+                        'btn-primary': !searchForm.invalid
+                      }">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+  <hr *ngIf="!flag">
+  <div *ngIf="!loadPage" class="spinner-div">
+    <span class="spinner-span spinner-border spinner-border-lg"></span>
+  </div>
+  <section *ngIf="loadPage">
+    <div *ngIf="hasResult">
+      <span *ngFor="let article of news">
+        <div class="card">
+          <div class="card-body">
+            <a href="{{article.articleUrl}}" target="_blank" rel="noopener noreferrer" class="card-link">{{article.articleTitle}}</a>
+            <p class="card-text overflow">{{article.articleBody}}</p>
+            <label class="card-link green">{{article.articleUrl}}</label>
+          </div>
+        </div>
+      </span>
+    </div>
+    <div *ngIf="!hasResult && !flag" class="text-center">
+      <h4>No result found, please try other query!</h4>
+    </div>
+    <div *ngIf="!flag">
+      <button *ngIf="showPrev" class="btn btn-secondary float-left" (click)="previous()">Previous</button>
+      <button *ngIf="showNext" class="btn btn-secondary float-right" (click)="next()">Next</button>
+    </div>
+  </section>
+  <router-outlet></router-outlet>
+</div>
