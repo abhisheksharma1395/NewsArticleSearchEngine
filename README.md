@@ -125,6 +125,12 @@ articles that match with the input query. We have implemented this in a search()
 ### Instruction on how to build the Lucene index
 To run Lucene run below command in LuceneSearch.jar folder
 
+### Instruction to create jar for Lucene index
+
+```bash
+mvn clean package
+```
+
 ```bash
 java -jar LuceneSearch.jar <data path> <path to create index> <path to store result> <query> 
 <number of articles to fetch> <create index(true) or use existing index (false)>
@@ -271,6 +277,13 @@ punctuations, stop words and to tokenize words and the result of this process wa
 the index.
    
 ### Run Instructions
+   
+#### Instruction to create jar for hadoop index
+
+```bash
+mvn clean package
+```
+   
 #### Instruction to build Hadoop index
 ```bash
 java -jar InvertedIndex.jar <Path to data> <path to store inverted index>
