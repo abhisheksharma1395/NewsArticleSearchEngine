@@ -123,13 +123,17 @@ In this part we have used the query object and checked the indexed database to f
 articles that match with the input query. We have implemented this in a search() method.
 
 ### Instruction on how to build the Lucene index
-To run Lucene run below command in LuceneSearch.jar folder
 
-### Instruction to create jar for Lucene index
+#### Instruction to create jar for Lucene index
 
 ```bash
 mvn clean package
 ```
+
+It will create jar in target folder
+
+
+#### To run Lucene run below command in target folder
 
 ```bash
 java -jar LuceneSearch.jar <data path> <path to create index> <path to store result> <query> 
