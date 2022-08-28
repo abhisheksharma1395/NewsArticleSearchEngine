@@ -8,6 +8,8 @@ There are three main aspects of the projects:
 2. Lucene Based Search Engine: Employed Apache Lucene library at the backend to index collected data and facilitate search-based query results. 
 3. Hadoop Based search Engine: The search engine is built using the Hadoop MapReduce framework to process the data and build indexes based on it. We have employed the TF-IDF ranking mechanism to rank the pages and provide relevant results.
 
+### [Click here](http://projects.searchengine.theabhisheksharma.info) for Live Demo.
+
 ## Crawler
 ### Overview of the crawling system
 The crawler crawls the website of [The New York Times](https://www.nytimes.com/) for news articles and saves the data in 
@@ -305,6 +307,12 @@ Example, <br>
 >  java -Dindex.lucene.path='/root/index/lucene/Index' -jar RestApi.jar
 
 #### Instruction to run UI
-Open chrome and go to localhost:8080
+> Update the rest API base url in the *service.ts* file.
+   
+To build angular app, run below command to start the angular app on local
+```bash
+ng serve
+```
+Open chrome and go to localhost:4200
 
 
